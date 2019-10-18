@@ -6,7 +6,10 @@ class BankAccountUseCases:
     def update_saving_account_with_saving_interest(self, account_id):
         saving_account = self.bank_account_repo.get_by_account_id(account_id)
         current_balance = saving_account.get_balance()
-        interest = self.saving_interest_calculator.get_interest_from_balance(
+        interest = self.saving_interest_calculator.calculate_interest_from_balance(
             current_balance)
         saving_account.set_balance(current_balance+interest)
         self.bank_account_repo.update(saving_account)
+
+    def create_new_saving_account(self, name, lastname, initial_balance):
+        return self.bank_account_repo.create(name, lastname, initial_balance)
