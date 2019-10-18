@@ -9,6 +9,9 @@ class SavingAccount(BankAccount):
         self.lastname = lastname
         self.balance = balance
 
+    def get_type(self):
+        return self.type
+
     def get_account_id(self):
         return self.account_id
 
