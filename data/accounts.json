@@ -1,0 +1,18 @@
+{
+    "accounts": [
+        {
+            "type": "Saving",
+            "account_id": "2379cc92-f195-11e9-af52-acde48001122",
+            "name": "John",
+            "lastname": "Doe",
+            "balance": 1194.052296529
+        },
+        {
+            "type": "Saving",
+            "account_id": "82a5d3a8-f197-11e9-bc18-acde48001122",
+            "name": "Nutt",
+            "lastname": "Yod",
+            "balance": 500.0
+        }
+    ]
+}
