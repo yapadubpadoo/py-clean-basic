@@ -1,12 +1,17 @@
-from app.data_provider.mongodb_data_provider import MongoDBDataProvider
 
+class BankAcccountDataProvider():
 
-class BankAcccountDataProvider(MongoDBDataProvider):
-    def find_one(self, condition):
-        self.connection.collection.find(condition)
+    def __init__(self, collection):
+        self.collection = collection
 
-    def insert_one(self, bank_account):
-        self.connection.collection.insert_one(back_account)
+    def get_one_by_account_id(self, account_id):
+        return self.collection.find_one({"account_id": account_id})
 
-    def update_one(self, filter_condition, updated_bank_account)
-    self.connection.collection.update(filter_condition, )
+    def create_one(self, bank_account):
+        self.collection.insert_one(bank_account)
+
+    def update_one(self, updated_bank_account):
+        account_id = updated_bank_account.get_account_id()
+        filter_condition = {"account_id": account_id}
+        updated_condition = {"$set": updated_bank_account}
+        self.collection.update_one(filter_condition, updated_condition)
