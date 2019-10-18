@@ -5,11 +5,14 @@ class BankAccount(ABC):
     def __init__(self, account_id, identity_number, name, lastname, balance):
         self.type = None
         self.account_id = account_id
-        self.identity_number = identity_number
         self.name = name
         self.lastname = lastname
         self.balance = balance
         super().__init__()
+
+    @abstractmethod
+    def get_type(self):
+        pass
 
     @abstractmethod
     def get_account_id(self):
