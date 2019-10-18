@@ -19,16 +19,11 @@ class JSONFileProvider:
 
     def find_one(self, condition):
         filter_keys = list(condition.keys())
-        print(filter_keys)
-        print(filter_keys[0])
-        print(condition[filter_keys[0]])
-        print(self.data['accounts'])
         for account in self.data['accounts']:
             if account[filter_keys[0]] == condition[filter_keys[0]]:
                 return account
 
     def insert_one(self, bank_account):
-        print(self.data['accounts'])
         self.data['accounts'].append(bank_account.__dict__)
         json.dump(self.data, self.json_file, indent=4)
 
